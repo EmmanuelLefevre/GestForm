@@ -1,1 +1,83 @@
-/* You can add global styles to this file, and also import other style files */
+/* ------ Color Palette ------ */
+:root {
+  /*---Main---*/
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-orange: #f5a94b;
+  --color-dark-orange: #F78700;
+  --color-alert: red;
+  --color-success: rgb(11, 254, 7);
+  --color-bg: #e1dfdf;
+  /*---Text---*/
+  --text-color-white: var(--color-white);
+  --text-color-black: var(--color-black);
+  --text-color-orange: var(--color-dark-orange);
+  /*---Background---*/
+  --bg-button-color: var(--color-bg);
+  --bg-hover-button-color: var(--color-orange);
+  /*---Borders---*/
+  --border-color: var(--color-dark-orange);
+}
+
+/* ------ Semantic Fonts ------ */
+:root {
+  --font-body: 'arial', 'helvetica', sans-serif;
+}
+
+/* ------ Reset ------ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+*:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  .logo {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+  }
+  button {
+    margin: 4vh 0;
+    padding: 1vh 1vw;
+    color: var(--text-color-black);
+    background-color: var(--bg-button-color);
+    border: 2px solid var(--border-color);
+    border-radius: 7px;
+    cursor: pointer;
+    &:hover {
+      color: var(--text-color-white);
+      background-color: var(--bg-hover-button-color);
+    }
+  }
+  .result {
+    font-size: 18px;
+    width: 30%;
+    text-align: center;
+    .success {
+      color: var(--color-success);
+      font-size: 24px;
+      font-variant: small-caps;
+    }
+    .half-success {
+      color: var(--text-color-orange);
+    }
+    .failure {
+      color: var(--color-alert);
+    }
+  }
+}
