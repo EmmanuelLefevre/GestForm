@@ -1,0 +1,28 @@
+<main>
+  <img src="assets/img/GestFormLogo.png" 
+         alt="Logo de GestForm"
+         class="logo">
+  <button type="submit" 
+          (click)="intervalNumber()"
+          aria-label="Bouton pour générer un chiffre aléatoire">Generate Number
+  </button>
+  <div class="result">
+    <ng-container *ngIf="result">
+      <div class="success">
+        <ng-container *ngIf="result === 'Gestform'">
+          {{result}}
+        </ng-container>
+      </div>
+      <div class="half-success">
+        <ng-container *ngIf="result === 'Geste' || result==='Forme'">
+          {{result}}
+        </ng-container>
+      </div>
+      <div class="failure">
+        <ng-container *ngIf="result >= -1000 || result <= 1000">
+          {{result}}
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+</main>
