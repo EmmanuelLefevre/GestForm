@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import * as confetti from 'canvas-confetti';
+
 
 @Component({
   selector: 'app-root',
@@ -12,7 +14,8 @@ export class AppComponent implements OnInit {
   title = "GestForm";
   result: any;
 
-  constructor() {}
+  constructor(private renderer2: Renderer2,
+              private elementRef: ElementRef) {}
 
   ngOnInit(): void {}
   
@@ -22,6 +25,14 @@ export class AppComponent implements OnInit {
     var n = Math.floor(Math.random() * (max - min) + min);
     console.log(n);
 
+    // Confettis
+    const canvas = this.renderer2.createElement('canvas');
+    this.renderer2.addClass(canvas, 'confetti-canvas');
+    this.renderer2.appendChild(this.elementRef.nativeElement, canvas);
+    const myConfetti = confetti.create(canvas, {
+      resize: true
+    });
+
     // Si le nombre est divisible par 3 et par 5
     if (n% 3 == 0 && n% 5 == 0) {
       console.log('Le chiffre saisi est divisible par 3 et par 5 => "Gestform"');
@@ -30,6 +41,10 @@ export class AppComponent implements OnInit {
       audio.src = "../assets/sound/applause.wav";
       audio.load();
       audio.play();
+      myConfetti({
+        particleCount: 100,
+        spread: 60
+      });
       return this.result;
 
     // Si le nombre est divisible par 5
