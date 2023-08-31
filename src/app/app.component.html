@@ -11,17 +11,23 @@
     <ng-container *ngIf="result">
       <div class="success">
         <ng-container *ngIf="result.value === 'GestForm'">
-          {{result.value}}
+          <div class="animate__animated animate__lightSpeedInLeft">
+            {{result.value}}
+          </div>
         </ng-container>
       </div>
       <div class="half-success">
         <ng-container *ngIf="result.value === 'Gest' || result.value === 'Form'">
-          {{result.value}}
+          <div class="animate__animated animate__fadeInDown">
+            {{result.value}}
+          </div>
         </ng-container>
       </div>
       <div class="failure">
         <ng-container *ngIf="result.value >= -1000 || result.value <= 1000">
-          {{result.value}}
+          <div class="animate__animated animate__flipInX">
+            {{result.value}}
+          </div>
         </ng-container>
       </div>
     </ng-container>
