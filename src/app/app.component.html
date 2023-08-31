@@ -10,18 +10,18 @@
   <div class="result">
     <ng-container *ngIf="result">
       <div class="success">
-        <ng-container *ngIf="result === 'Gestform'">
-          {{result}}
+        <ng-container *ngIf="result.value === 'GestForm'">
+          {{result.value}}
         </ng-container>
       </div>
       <div class="half-success">
-        <ng-container *ngIf="result === 'Geste' || result === 'Forme'">
-          {{result}}
+        <ng-container *ngIf="result.value === 'Gest' || result.value === 'Form'">
+          {{result.value}}
         </ng-container>
       </div>
       <div class="failure">
-        <ng-container *ngIf="result >= -1000 || result <= 1000">
-          {{result}}
+        <ng-container *ngIf="result.value >= -1000 || result.value <= 1000">
+          {{result.value}}
         </ng-container>
       </div>
     </ng-container>
