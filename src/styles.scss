@@ -73,14 +73,16 @@ main {
     text-align: center;
     .success {
       color: var(--color-success);
-      font-size: 24px;
+      font-size: 32px;
       font-variant: small-caps;
     }
     .half-success {
       color: var(--text-color-orange);
+      font-size: 24px;
     }
     .failure {
       color: var(--color-alert);
+      font-size: 24px;
     }
   }
 }
